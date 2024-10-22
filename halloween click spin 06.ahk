@@ -14,12 +14,12 @@ global clickAreaX1 := 345, clickAreaY1 := 500  ; Top-left coordinate
 global clickAreaX2 := 365, clickAreaY2 := 765 ; Bottom-right coordinate
 
 ; Wait durations
-tinyWait := 10      ; For very short waits
+tinyWait := 1      ; For very short waits
 shortWait := 100    ; For short waits
 mediumWait := 500   ; For medium waits
 
 tooltipDuration := 1000  ; For tooltip display duration
-spinClickDuration := 10000 ; Set the random click duration here for the first window
+spinClickDuration := 600000 ; Set the random click duration here for the first window, 60000 = 1 minute
 
 scriptLoopWait := mediumWait ; Set the script loop wait time here
 ; ====== END MODIFIABLE PARAMETERS ======
@@ -112,7 +112,7 @@ SpinClick(duration) {
         ShowTooltip("Spin click")
         RandomClick()  ; Perform a random click
         Send("{r}")  ; Press 'r' while clicking
-        Sleep(tinyWait)  ; Optional delay between clicks (adjust as necessary)
+        Sleep(tinyWait)  ; Optional delay between clicks
     }
     
     Send("{Right Up}")  ; Release the right arrow key
@@ -123,7 +123,7 @@ BackgroundAccounts() {
     Loop 4  ; Loop four times
     {
         Send("{r}")  ; Press 'r'
-        Sleep(shortWait)  ; Short delay between presses (adjust if necessary)
+        Sleep(shortWait)  ; Short delay between presses
     }
 }
 
