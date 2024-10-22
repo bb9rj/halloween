@@ -5,7 +5,7 @@ A simple script that clicks in a defined area while rotating the camera and pres
 ## 📋 Instructions
 1. Set your character to **first-person view**.
 2. Edit the coordinates to a narrow box to align with the breakables in zone 3.
-3. Hint: Align the autotap finger with the rock by the candy machine.
+3. Hint: Align the autotap finger with the spiky rock by the upgrade machine.
 4. Press `F7` to start the script.
 5. Press `F6` to pause the script.
 6. Press `F8` to stop the script.  
