@@ -12,3 +12,9 @@ A simple script that clicks in a defined area while rotating the camera and pres
 
 ## 📍 Location
 Stand in line with the **flag pole** at the back of the zone.
+
+## Preview
+https://github.com/user-attachments/assets/4d50a161-d89e-41c1-be53-00cadbbb5e57
+
+
+
