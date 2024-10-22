@@ -11,4 +11,4 @@ A simple script that clicks in a defined area while rotating the camera and pres
 6. Press `F8` to stop the script.  
 
 ## 📍 Location
-Stand by the **flag pole** in the center of the zone.
+Stand in line with the **flag pole** at the back of the zone.
