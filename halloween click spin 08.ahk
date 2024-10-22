@@ -24,15 +24,22 @@ spinClickDuration := 600000 ; Set the random click duration here for the first w
 scriptLoopWait := mediumWait ; Set the script loop wait time here
 ; ====== END MODIFIABLE PARAMETERS ======
 
-isClicking := false  ; Initialize isClicking
-isPaused := false    ; Initialize pause state
+global isClicking := false  ; Initialize isClicking
+global isPaused := false    ; Initialize pause state
 global box  ; Define the GUI globally for reference
 
 F7::
 {
-    isClicking := true
+    global isClicking  ; Declare isClicking as global
+    if (!isClicking) {
+        ShowClickArea()  ; Display the clickable area
+        ShowTooltip("Line rectangle up with breakables. Press F7 to start clicking.")
+        isClicking := true  ; Set isClicking to true to indicate GUI is displayed
+        return
+    }
+
+    ; Start clicking
     ShowTooltip("Starting")  ; Show tooltip at the top left
-    ShowClickArea()  ; Display the clickable area
 
     idList := WinGetList("ahk_exe RobloxPlayerBeta.exe")
 
@@ -72,11 +79,6 @@ F7::
             ; Different actions for the first window vs other windows
             if (windowCount = 1)
             {
-                ; Reset right arrow key before spinning
-                Send("{Right Up}")  ; Release right key to reset
-                Sleep(shortWait)  ; Short delay before pressing again
-                ShowTooltip("Reset right arrow key")  ; Display tooltip for right key
-                
                 SpinClick(spinClickDuration)  ; Use variable for spin duration
             }
             else
@@ -105,8 +107,6 @@ RandomClick() {
 SpinClick(duration) {
     endTime := A_TickCount + duration
     
-    Send("{Right Down}")  ; Hold down the right arrow key
-    
     while (A_TickCount < endTime)
     {
         ShowTooltip("Spin click")
@@ -114,8 +114,6 @@ SpinClick(duration) {
         Send("{r}")  ; Press 'r' while clicking
         Sleep(tinyWait)  ; Optional delay between clicks
     }
-    
-    Send("{Right Up}")  ; Release the right arrow key
 }
 
 ; Function for background accounts to press 'r'
@@ -123,7 +121,7 @@ BackgroundAccounts() {
     Loop 4  ; Loop four times
     {
         Send("{r}")  ; Press 'r'
-        Sleep(shortWait)  ; Short delay between presses
+        Sleep(shortWait)  ; Short delay between presses (adjust if necessary)
     }
 }
 
@@ -165,8 +163,4 @@ F6::
 }
 
 ; ====== F8 to Stop ======
-F8::
-{
-    Send("{Right Up}")  ; Reset right arrow key when stopping
-    ExitApp  ; Close the script
-}
+F8::ExitApp  ; Close the script
