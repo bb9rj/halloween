@@ -14,9 +14,9 @@ global clickAreaX1 := 320, clickAreaY1 := 560  ; Top-left coordinate
 global clickAreaX2 := 400, clickAreaY2 := 600 ; Bottom-right coordinate
 
 ; Wait durations
-tinyWait := 1      ; For very short waits
-shortWait := 100    ; For short waits
-mediumWait := 500   ; For medium waits
+tinyWait := 1      ; Tiny wait
+shortWait := 100    ; Short waits
+mediumWait := 500   ; Medium waits
 
 tooltipDuration := 1000  ; For tooltip display duration
 spinClickDuration := 600000 ; Set the random click duration here for the first window, 60000 = 1 minute
