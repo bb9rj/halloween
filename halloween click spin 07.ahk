@@ -10,8 +10,8 @@ SetMouseDelay(-1)
 
 ; ====== MODIFIABLE PARAMETERS ======
 ; Area to click
-global clickAreaX1 := 345, clickAreaY1 := 500  ; Top-left coordinate
-global clickAreaX2 := 365, clickAreaY2 := 765 ; Bottom-right coordinate
+global clickAreaX1 := 320, clickAreaY1 := 560  ; Top-left coordinate
+global clickAreaX2 := 400, clickAreaY2 := 600 ; Bottom-right coordinate
 
 ; Wait durations
 tinyWait := 1      ; For very short waits
